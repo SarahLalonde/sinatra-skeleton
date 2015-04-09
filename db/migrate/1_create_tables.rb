@@ -18,6 +18,13 @@ class CreateTables < ActiveRecord::Migration
             t.timestamps
         end
 
+        create_table :reviews do |t|
+            t.string :title
+            t.string :review
+            t.integer :user_rating
+            t.timestamps
+        end
+
     end
 
 end
