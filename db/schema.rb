@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.integer  "review_id"
   end
 
   create_table "reviews", force: true do |t|
@@ -30,6 +29,8 @@ ActiveRecord::Schema.define(version: 2) do
     t.integer  "user_rating"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "movie_id"
+    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|
