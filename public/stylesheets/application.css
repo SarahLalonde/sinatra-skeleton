@@ -1,0 +1,58 @@
+body{
+	background-color: #FF6600;
+}
+h1{
+	font-size: 45px;
+	font-family:Arial;
+	color: white;
+	margin-left: 7%;
+	margin-top: 50px;
+}
+
+img{
+	border:10px solid #FFFFFF;
+
+	
+
+}
+legend{
+	color:white;
+	font-family: Tahoma;
+	clear:both;
+	width: 50%;
+	margin: auto;
+	text-align: center;
+
+
+}
+button{
+	margin-left: 44%;
+	margin-top: 10px:;
+
+
+}
+fieldset{
+	padding: 30px;
+	margin:auto;
+
+}
+p{
+	color: white;
+	margin: auto;
+}
+.form-group{
+	color: white;
+	width:400px;
+	margin:auto;
+}
+/*.info{
+	margin:auto;
+	color:white;
+	text-align: center; 
+}*/
+#info-container {
+	margin: auto;
+	width: 400px;
+	color: white;
+	font-size: 16px:;
+}
