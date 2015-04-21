@@ -36,7 +36,7 @@ post '/signup' do
 	if user
 		redirect '/signup'
 	else
-		user = User.create(username: username, password: passowrd)
+		user = User.create(username: username, password: password)
 		session[:user_id] = user.id
 		redirect '/'
 	end
@@ -45,4 +45,50 @@ end
 get '/movies/new' do
 	erb :new_movie
 end
+
+get '/movies/:id' do
+	@movie = Movie.find(params[:id])
+	erb :movie_show
+end
+
+
+post '/movies/create' do
+	title = params[:title]
+    director = params[:director]
+    release_date = params[:release_date]
+    genre = params[:genre]
+    run_time = params[:run_time]
+
+   
+    
+    movie = Movie.find_by(title: title)
+	if movie
+		redirect '/movies'
+	else
+		new_movie = current_user.movies.create title: title, director: director, release_date: release_date, genre: genre, run_time: run_time
+    redirect "/movies/#{new_movie.id}"
+
+	end
+end
+
+# post '/movies/:id/reviews/new' do
+# 	title = params[:title]
+# 	review = params[:review]
+#     user_rating = params[:user_rating]
+
+#     current_user.reviews.create title: title, review: review, user_rating: user_rating
+#     new_review = current_user.reviews.create title: title, review: review, user_rating: user_rating
+#     redirect "reviews/#{new_review.id}"
+
+#      review = Review.find_by(title: title user_id: user_id)
+# 	if review
+# 		Print "You've already reviewed this movie"
+# 		redirect '/movies'
+# 	else
+# 		review = Review.create(title: title, review: review, user_rating: user_rating)
+# 		session[:user_id] = user.id
+# 		redirect 'new_review'
+	# end
+# end
+
 
