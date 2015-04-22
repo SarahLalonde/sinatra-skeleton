@@ -1,0 +1,45 @@
+<form action='/profile/edit' method='post'>
+<fieldset>
+                <legend>My Profile</legend>
+
+                  <div id="info-container">
+                   <!-- <div class="form-group">
+                    <label for="firstname">First Name</label>
+                      <input type="text" class="form-control" id="firstname" value="<%= @current_user.first_name%>">
+                    </div>
+                    <div class="form-group">
+                      <label for="lastname">Last Name</label>
+                      <input type="text" class="form-control" id="lastname" value="<%= @current_user.last_name%>">
+                    </div> -->
+                    <div class="form-group">
+                      <label for="username">Username</label>
+                      <input type="username" class="form-control" id="username" value="<% @current_user.username%>"> 
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email Address</label>
+                      <input type="email" id="email" value="<%= @current_user.email %>">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div> 
+                    <!--<div class="form-group">
+                      <label for="age">Age</label>
+                      <input type="text" class="form-control" id="age" name="age" placeholder="Age">
+                    </div>
+                    <p>
+                      <div class="info">
+                        <label for="male-radio">Male</label>
+                        <input type="radio" id="male-radio" name="gender" value="male">
+                        <label for="female-radio">Female</label>
+                        <input type="radio" id="female-radio" name="gender" value="Female">
+                    </p>
+                      </div> -->
+                    
+                  <div>
+                    <p>
+                       <button type="submit" class="btn btn-primary">Save Changes</button>  
+                    </p>
+                  </div>
+
+                </fieldset>
+  </form>

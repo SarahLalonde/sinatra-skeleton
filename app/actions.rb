@@ -71,6 +71,24 @@ post '/movies/create' do
 	end
 end
 
+get '/profile/edit' do
+	current_user
+	erb :profile
+end
+
+post '/profile/edit/' do
+	username = params[:username]
+	#first_name = params[:first_name]
+	#last_name = params[:last_name]
+	#age = params[:age]
+	#gender = params[:gender]
+	email = params[:email]
+	password = params[:password]
+
+	current_user.update username: username, email: email, password: password #first_name: first_name, last_name: last_name, age: age, gender: gender
+end 
+
+
 # post '/movies/:id/reviews/new' do
 # 	title = params[:title]
 # 	review = params[:review]
